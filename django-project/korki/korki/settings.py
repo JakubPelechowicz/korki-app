@@ -81,7 +81,7 @@ DATABASES = {
         'USER': 'postgres', 
         'PASSWORD': 'admin',
         'HOST': '127.0.0.1', 
-        'PORT': '5432',
+        'PORT': '',
     }
 }
 
@@ -129,3 +129,4 @@ STATICFILES_DIRS = [
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+LOGIN_REDIRECT_URL = "/"

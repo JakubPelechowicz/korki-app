@@ -17,7 +17,9 @@
       <div class="sideBar">
         <div class="logo__container">
           <ion-icon class="map__logo" name="map-outline"></ion-icon>
+          {% block content %}
           <h2 class="app__name">Traffic Jams App</h2>
+          {% endblock %}
           </div>
                     <!-- Add event -->
                     <div class="event__options">
@@ -41,9 +43,9 @@
                       </div>
                       <!-- Add event end -->
         </div>
-      
+       
     <div class="map" id="map"></div>
-
+    
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <script  src="{% static 'js/script.js'" %}"></script>

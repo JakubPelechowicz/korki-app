@@ -27,20 +27,26 @@
       </div>
 
       <div class="place__holder__container">
+        <form action="" method=POST>
+          {% csrf_token %}
+    
+        <form>
+    
         <input
           type="text"
           placeholder="&#128113;Enter Username"
-          name="uname"
+          name="username"
           required
         />
 
         <input
           type="password"
           placeholder="&#x1F512;Enter Password"
-          name="psw"
+          name="password"
           required
         />
-        <button type="submit">Login</button>
+       
+        <input type="submit" value="Submit" class="btn btn-secondary">
         <span class="create__account__span"
           >Create your account <i class="fa-solid fa-arrow-right"></i
         ></span>
