@@ -1,0 +1,83 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  background-color: #012e40;
+  height: 100vh;
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+}
+
+.login__container {
+  width: 400px;
+  height: 400px;
+  background-color: #3ca6a6;
+  background-color: #024959;
+  border-radius: 30px;
+  color: white;
+  -webkit-box-shadow: 3px 10px 30px -9px rgba(0, 0, 0, 1);
+  -moz-box-shadow: 3px 10px 30px -9px rgba(0, 0, 0, 1);
+  box-shadow: 3px 10px 30px -9px rgba(0, 0, 0, 1);
+}
+.logo {
+  text-align: center;
+  margin-top: 1.5rem;
+  transition: 0.4s;
+}
+.logo:hover {
+  transform: translateY(-5px);
+}
+.map__logo {
+  font-size: 3rem;
+  color: #3ca6a6;
+}
+.app__name {
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+.place__holder__container {
+  margin-top: 2rem;
+  text-align: center;
+}
+input[type='text'],
+input[type='password'] {
+  border-radius: 20px;
+
+  width: 60%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+.btn {
+  margin-top: 1.5rem;
+  color: white;
+  padding: 14px 20px;
+  background-color: #3ca6a6;
+  border: none;
+  cursor: pointer;
+  width: 60%;
+  border-radius: 30px;
+  transition: 0.4s;
+}
+button:hover {
+  background-color: #369696;
+}
+.create__account__span {
+  margin-top: 1.5rem;
+  display: block;
+  text-align: center;
+  opacity: 0.7;
+  transition: 0.4s;
+}
+.create__account__span:hover {
+  cursor: pointer;
+  opacity: 0.9;
+}

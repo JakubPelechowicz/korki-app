@@ -1,0 +1,111 @@
+@import '//netdna.bootstrapcdn.com/font-awesome/3.0/css/font-awesome.css';
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+body {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  column-gap: 1.5rem;
+  height: 100vh;
+  width: 100vw;
+  padding: 0 2rem 0 2rem;
+  background-color: #012e40;
+}
+.sideBar {
+  width: 300px;
+  height: 90vh;
+  background-color: #012e40;
+  color: white;
+  position: relative;
+}
+#map {
+  flex-grow: 1;
+  height: 90vh;
+}
+
+.logo__container {
+  color: white;
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+.map__logo {
+  font-size: 3rem;
+  color: #3ca6a6;
+}
+.app__name {
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
+.event__options {
+  width: 90%;
+  margin: 2rem auto 0 auto;
+  padding: 1rem;
+  border-radius: 25px;
+  text-align: center;
+  background-color: #026773;
+  -webkit-box-shadow: 3px 10px 30px -9px rgba(0, 0, 0, 1);
+  -moz-box-shadow: 3px 10px 30px -9px rgba(0, 0, 0, 1);
+  box-shadow: 3px 10px 30px -9px rgba(0, 0, 0, 1);
+}
+.form__description {
+  width: 100%;
+  margin-top: 1rem;
+}
+.form__input--description {
+  width: 100%;
+  height: 100px;
+  padding: 0.6rem;
+}
+.submit__button {
+  margin-top: 1rem;
+  background-color: #3ca6a6;
+  border-radius: 10px;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  transition: 0.7s;
+}
+.submit__button:hover {
+  background-color: #369696;
+}
+.copy__right {
+  position: absolute;
+  bottom: 1rem;
+  left: 0;
+  right: 0;
+}
+.copy__right__span {
+  font-size: 0.75rem;
+  color: #024959;
+  display: block;
+  text-align: center;
+}
+
+.logout_login{
+  position: fixed;
+  top: 2rem;
+  left: 2rem;
+  color:white;
+  
+}
+
+a{
+  text-decoration: none;
+  color: white;
+  transition:0.4s;
+}
+a:hover{
+  cursor: pointer;
+  color: #3ca6a6;
+}

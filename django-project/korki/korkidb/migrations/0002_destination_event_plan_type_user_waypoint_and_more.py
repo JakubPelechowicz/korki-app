@@ -75,9 +75,7 @@ class Migration(migrations.Migration):
                 ('user_id', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='korkidb.user')),
             ],
         ),
-        migrations.DeleteModel(
-            name='Osoba',
-        ),
+        
         migrations.AddField(
             model_name='plan',
             name='user_id',
