@@ -1,4 +1,55 @@
 <!DOCTYPE html>
-<body>
-    platforma działa poprawnie
-</body>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap" rel="stylesheet">
+    {% load static %}
+    <link rel="stylesheet" href="{%  static  'css/style.css'  %}" />
+   
+  </head>
+  <body>
+      <div class="sideBar">
+        <div class="logo__container">
+          <ion-icon class="map__logo" name="map-outline"></ion-icon>
+          <h2 class="app__name">Traffic Jams App</h2>
+          </div>
+                    <!-- Add event -->
+                    <div class="event__options">
+                      <form class="form ">
+                        <div class="form__row">
+                          <label class="form__label">Zdarzenie</label>
+                          <select class="form__input form__input--type">
+                            <option value="police">policja</option>
+                            <option value="jam">korek</option>
+                            <option value="crash">kolizja</option>
+                          </select>
+                        </div>
+                        <div class="form__row form__description">     
+                          <input class="form__input form__input--description" placeholder="opis" />
+                        </div>
+                        <button type="button" class="submit__button">Potwierdz!</button>
+                      </form>
+                      </div>
+                      <div class="copy__right">
+                        <span class="copy__right__span">&copy; Traffic Jams App All rights reserved</span>
+                      </div>
+                      <!-- Add event end -->
+        </div>
+      
+    <div class="map" id="map"></div>
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script  src="{% static 'js/script.js'" %}"></script>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCaiLaB3kTDFHibhPD2uMr3Q1LCOWiAb1k&callback=initMap&v=weekly"
+      defer 
+    ></script>
+  </body>
+</html>

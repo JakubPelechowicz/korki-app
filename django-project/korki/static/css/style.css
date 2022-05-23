@@ -1,0 +1,82 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+body {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  padding: 0 2rem 0 2rem;
+}
+.sideBar {
+  width: 300px;
+  height: 90vh;
+  background-color: #012e40;
+  color: white;
+  position: relative;
+}
+#map {
+  flex-grow: 1;
+  height: 90vh;
+}
+
+.logo__container {
+  color: white;
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+.map__logo {
+  font-size: 3rem;
+  color: #3ca6a6;
+}
+.app__name {
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
+.event__options {
+  width: 90%;
+  margin: 2rem auto 0 auto;
+  padding: 1rem;
+  border-radius: 25px;
+  text-align: center;
+  background-color: #026773;
+}
+.form__description {
+  width: 100%;
+  margin-top: 1rem;
+}
+.form__input--description {
+  width: 100%;
+  height: 100px;
+  text-align: center;
+}
+.submit__button {
+  margin-top: 1rem;
+  background-color: #3ca6a6;
+  border-radius: 10px;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+.copy__right {
+  position: absolute;
+  bottom: 1rem;
+  left: 0;
+  right: 0;
+}
+.copy__right__span {
+  font-size: 0.75rem;
+  color: #024959;
+  display: block;
+  text-align: center;
+}
