@@ -7,8 +7,10 @@ function initMap() {
 
   // The map, centered at Uluru
   map = new google.maps.Map(document.getElementById('map'), {
-    zoom: 13,
+    zoom: 15,
   });
+  const trafficLayer = new google.maps.TrafficLayer();
+  trafficLayer.setMap(map);
   if ('geolocation' in navigator) {
     navigator.geolocation.getCurrentPosition(
       position =>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://kit.fontawesome.com/5c86764a34.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap"
+      rel="stylesheet"
+    />
+    {% load static %}
+    <link rel="stylesheet" href="{%  static  'css/login.css'  %}" />
+  </head>
+  <body>
+    <div class="login__container">
+      <div class="logo">
+        <ion-icon class="map__logo" name="map-outline"></ion-icon>
+        <h2 class="app__name">Traffic Jams App</h2>
+      </div>
+
+      <div class="place__holder__container">
+        <input
+          type="text"
+          placeholder="&#128113;Enter Username"
+          name="uname"
+          required
+        />
+
+        <input
+          type="password"
+          placeholder="&#x1F512;Enter Password"
+          name="psw"
+          required
+        />
+        <button type="submit">Login</button>
+        <span class="create__account__span"
+          >Create your account <i class="fa-solid fa-arrow-right"></i
+        ></span>
+      </div>
+    </div>
+
+    <!-- Added scripts --->
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+  </body>
+</html>
