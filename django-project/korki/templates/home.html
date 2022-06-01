@@ -38,9 +38,17 @@
 <div class="map" id="map"></div>
 {% if user.is_authenticated %}
 <span class="logout_login"><a href="{% url 'logout' %}"><i class="fa-solid fa-arrow-right-from-bracket"></i> Log Out</a> </span>
+
 {% else %}
 <span class="logout_login"><a href="{% url 'login' %}"><i class="fa-solid fa-arrow-right-from-bracket"></i> Login</a></span>
+<i class="fa-solid fa-calendar-days icon_calendar"></i>
 {% endif %}
-
+<div class="overlay hidden"></div>
+<div class="popup hidden">
+  <div class="popupcontent">
+      <h1 style="text-align: center;">Calendar</h1>
+      
+  </div>
+</div>
 
 {% endblock %}

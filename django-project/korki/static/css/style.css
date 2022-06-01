@@ -13,7 +13,7 @@ body {
   column-gap: 1.5rem;
   height: 100vh;
   width: 100vw;
-  padding: 0 2rem 0 2rem;
+  
   background-color: #012e40;
 }
 .sideBar {
@@ -108,4 +108,39 @@ a{
 a:hover{
   cursor: pointer;
   color: #3ca6a6;
+}
+.icon_calendar
+{
+  position: fixed;
+  top: 2rem;
+  left: 8rem;
+  color: white;
+}
+
+.overlay{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  background: #999;
+  width: 100%;
+  height: 100%;
+  opacity: 0.8;
+  z-index: 100;
+}
+
+.popup {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background-color: #026773;
+  width: 500px;
+  height: 500px;
+  margin-left: -250px; /*Half the value of width to center div*/
+  margin-top: -250px; /*Half the value of height to center div*/
+  z-index: 200;
+  border-radius: 25px;
+}
+
+.hidden{
+  display: none;
 }
