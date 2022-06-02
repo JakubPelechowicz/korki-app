@@ -115,32 +115,77 @@ a:hover{
   top: 2rem;
   left: 8rem;
   color: white;
+  transition: 00.4s;
+}
+.icon_calendar:hover{
+  cursor: pointer;
+  color: #3ca6a6;
 }
 
 .overlay{
   position: absolute;
   top: 0;
   bottom: 0;
-  background: #999;
+  background: rgb(0, 0, 0);
   width: 100%;
   height: 100%;
   opacity: 0.8;
   z-index: 100;
+  transition: 0.2s;
 }
+
+.popupcontent{
+  color: white;
+  text-align: center;
+}
+.calendar {
+  width: 90%;
+  margin: auto;
+  font-size: 13px;
+}
+
+.calendar tr, .calendar td {
+  border: 1px solid black;
+  background-color: #034e57;
+}
+
+.calendar th {
+  padding: 10px;
+  text-align: center;
+  font-size: 18px;
+}
+
+.calendar td {
+  width: 200px;
+  height: 10%;
+  padding: 20px 0px 0px 5px;
+}
+
+.month {
+  font-size: 25px;
+}
+
+.date {
+  font-size: 16px;
+}
+
 
 .popup {
   position: absolute;
   top: 50%;
   left: 50%;
-  background-color: #026773;
+  background-color: #034e57;
   width: 500px;
   height: 500px;
   margin-left: -250px; /*Half the value of width to center div*/
   margin-top: -250px; /*Half the value of height to center div*/
   z-index: 200;
   border-radius: 25px;
+  transition: 0.4s;
+
 }
 
 .hidden{
   display: none;
+  transition: 0.3s;
 }

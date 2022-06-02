@@ -1,10 +1,19 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
+import calendar
+from calendar import HTMLCalendar
+from datetime import datetime
+
+#geting current date
+current_date = datetime.now()
+#creating calendar
+cal = HTMLCalendar().formatmonth(current_date.year,current_date.month)
+
 
 
 def home(request):
-    return render(request, 'home.html')
+    return render(request, 'home.html',{"cal":cal})
 
 
 def login_user(request):
