@@ -109,3 +109,8 @@ a:hover{
   cursor: pointer;
   color: #3ca6a6;
 }
+
+/*//////////////////////*/
+.calendar{
+  margin-top: 1rem;
+}
