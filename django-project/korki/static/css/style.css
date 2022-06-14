@@ -23,6 +23,9 @@ body {
   color: white;
   position: relative;
 }
+.hidden{
+  display: none;
+}
 #map {
   flex-grow: 1;
   height: 90vh;

@@ -1,5 +1,10 @@
 // Initialize and add the map
-const test=0;
+// Initialize and add the map
+const inputContainer=document.querySelector(".event__options");
+const colisionType=document.querySelector(".form__input--type");
+const submitColision=document.querySelector("#submit_colision");
+const formDescription=document.querySelector(".form__input--description");
+let lat, lng, myEvent;
 const from = document.querySelector(".input1");
 const to = document.querySelector(".input2");
 let clicked = 0;
@@ -93,6 +98,34 @@ function initMap() {
       }
       console.log(latS,lngS,latF,lngF,opis,plandate);
     });
+    google.maps.event.addListener(map, 'click', function(event) {
+      //placeMarker(event.latLng);
+      
+      lat=event.latLng.toJSON().lat;
+      lng=event.latLng.toJSON().lng;
+      myEvent=event;
+      inputContainer.classList.remove("hidden");
+   });
+   submitColision.addEventListener("click",function(){
+    console.log(lat,lng,colisionType.value,formDescription.value);
+    placeMarker(myEvent.latLng, colisionType.value, formDescription.value);
+    inputContainer.classList.add("hidden");
+  })
+  
+   function placeMarker(location, typexDD,dsc) {
+    if(dsc=="opis"){
+      dsc="";
+    }
+    var marker = new google.maps.Marker({
+        position: location, 
+        map: map,
+        title:`${typexDD} ${dsc}`,
+    });
+    marker.setPosition(location);
+    
+    
+  }
+    
  };
 
 ///////////////////////////////////////////////
