@@ -38,19 +38,25 @@
 <div class="map" id="map"></div>
 {% if user.is_authenticated %}
 <span class="logout_login"><a href="{% url 'logout' %}"><i class="fa-solid fa-arrow-right-from-bracket"></i> Log Out</a> </span>
-
+<i class="fa-solid fa-calendar-days icon_calendar"></i>
 {% else %}
 <span class="logout_login"><a href="{% url 'login' %}"><i class="fa-solid fa-arrow-right-from-bracket"></i> Login</a></span>
-<i class="fa-solid fa-calendar-days icon_calendar"></i>
 {% endif %}
+
+
 <div class="overlay hidden"></div>
 <div class="popup hidden">
   <div class="popupcontent">
+      <a class="close" href="{% url 'home' %}"> x </a>
       <h1>Calendar</h1>
-      <div class="calendar">
-        {{ cal|safe }}
-      </div>
-  </div>
+{{cal|safe}}
+<div class="clearfix">
+	<a class="btn btn-info left" href="{% url 'calendar' %}?{{ prev_month }}"> Previous Month </a>
+	<a class="btn btn-info right" href="{% url 'calendar' %}?{{ next_month }}"> Next Month </a>
+
+</div>
+</div>
+</div>
 </div>
 
 {% endblock %}
