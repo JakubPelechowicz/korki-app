@@ -1,5 +1,5 @@
 // Initialize and add the map
-
+const test=0;
 const from = document.querySelector(".input1");
 const to = document.querySelector(".input2");
 let clicked = 0;
