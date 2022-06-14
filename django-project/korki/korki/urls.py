@@ -5,8 +5,11 @@ from korkidb import views
 
 
 urlpatterns = [
-    path('',views.home,name='home'),
+    path('',views.CalendarView.as_view(),name='home'),
     path('admin/', admin.site.urls),
     path('korkidb/', include('django.contrib.auth.urls')),
     path('korkidb/', include('korkidb.urls')), # new
+    path('',include('korkidb.urls')),
 ]
+
+

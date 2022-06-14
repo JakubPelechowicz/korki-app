@@ -13,7 +13,7 @@ body {
   column-gap: 1.5rem;
   height: 100vh;
   width: 100vw;
-  padding: 0 2rem 0 2rem;
+  
   background-color: #012e40;
 }
 .sideBar {
@@ -113,7 +113,128 @@ a:hover{
   color: #3ca6a6;
 }
 
-/*//////////////////////*/
-.calendar{
-  margin-top: 1rem;
+
+
+.icon_calendar
+{
+  position: fixed;
+  top: 2rem;
+  left: 8rem;
+  color: white;
+  transition: 00.4s;
+}
+.icon_calendar:hover{
+  cursor: pointer;
+  color: #3ca6a6;
+}
+
+.overlay{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  background: rgb(0, 0, 0);
+  width: 100%;
+  height: 100%;
+  opacity: 0.8;
+  z-index: 100;
+  transition: 0.2s;
+}
+
+.popupcontent{
+  color: white;
+  text-align: center;
+  position:relative;
+}
+.calendar {
+  width: 98%;
+  margin: auto;
+  font-size: 13px;
+}
+
+.calendar tr, .calendar td {
+  border: 1px solid black;
+}
+
+.calendar th {
+  padding: 10px;
+  text-align: center;
+  font-size: 18px;
+}
+
+.calendar td {
+  width: 200px;
+  height: 80px;
+  padding: 20px 0px 0px 5px;
+}
+
+.month {
+  font-size: 25px;
+}
+
+.date {
+  font-size: 16px;
+}
+
+
+.month {
+  font-size: 25px;
+}
+
+.date {
+  font-size: 16px;
+}
+
+.close{
+left: 15px;
+top: 5px;
+position: absolute;
+font-size: 30px;
+font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+.popup {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background-color: #034e57;
+  width: 1000px;
+  height: 700px;
+  margin-left: -500px; /*Half the value of width to center div*/
+  margin-top: -350px; /*Half the value of height to center div*/
+  z-index: 200;
+  border-radius: 25px;
+  transition: 0.4s;
+
+}
+
+.hidden{
+  display: none;
+  transition: 0.3s;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+}
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+  transition: 00.2s;
+ 
+  /* Position the tooltip text - see examples below! */
+  position: absolute;
+  z-index: 1;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  transition-delay: 1s;
 }
