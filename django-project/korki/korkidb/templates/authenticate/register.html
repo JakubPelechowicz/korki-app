@@ -17,7 +17,7 @@
       rel="stylesheet"
     />
     {% load static %}
-    <link rel="stylesheet" href="{%  static  'css/login.css'  %}" />
+    <link rel="stylesheet" href="{%  static  'css/registration.css'  %}" />
   </head>
   <body>
     <div class="login__container">
@@ -25,35 +25,18 @@
         <ion-icon class="map__logo" name="map-outline"></ion-icon>
         <h2 class="app__name">Traffic Jams App</h2>
       </div>
-
       <div class="place__holder__container">
-        <form action="" method=POST>
-          {% csrf_token %}
-    
-        <form>
-    
-        <input
-          type="text"
-          placeholder="&#128113;Enter Username"
-          name="username"
-          required
-        />
-
-        <input
-          type="password"
-          placeholder="&#x1F512;Enter Password"
-          name="password"
-          required
-        />
-       
-        <input type="submit" value="Submit" class="btn btn-secondary">
-        <span class="create__account__span"
-        ><a href="{% url 'register_user' %}"
-          >Create your account <i class="fa-solid fa-arrow-right"></i></a
-      ></span>
+        <form action="" method="POST">
+          {% csrf_token %} {%for field in form %} {{field}} {%endfor%}
+          <input type="submit" name="Create User" value="Sumbit" />
+        </form>
       </div>
+      {{form.errors}}
+      <span class="create__account__span"
+        ><a href="{% url 'login' %}"
+          >Log In <i class="fa-solid fa-arrow-right"></i></a
+      ></span>
     </div>
-
     <!-- Added scripts --->
     <script
       type="module"
@@ -62,6 +45,10 @@
     <script
       nomodule
       src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="{%  static  'js/register.js'  %}"
     ></script>
   </body>
 </html>

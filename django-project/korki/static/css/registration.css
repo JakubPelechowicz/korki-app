@@ -17,10 +17,22 @@ a {
   color: inherit; /* blue colors for links too */
   text-decoration: inherit; /* no underline */
 }
-
+.errorlist {
+  margin: 1rem 0 1rem 0;
+  padding: 1rem;
+  border-radius: 10px;
+  list-style: none;
+  background-color: #e64c40;
+  margin-left: auto;
+  margin-right: auto;
+  width: 60%;
+}
+.errorlist li {
+  text-align: center;
+}
 .login__container {
   width: 400px;
-  height: 400px;
+  padding-bottom: 2rem;
   background-color: #3ca6a6;
   background-color: #024959;
   border-radius: 30px;
