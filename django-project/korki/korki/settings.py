@@ -77,9 +77,9 @@ WSGI_APPLICATION = 'korki.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'korki', 
+        'NAME': 'postgres', 
         'USER': 'postgres', 
-        'PASSWORD': 'password',
+        'PASSWORD': 'admin',
         'HOST': '127.0.0.1', 
         'PORT': '',
     }

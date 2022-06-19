@@ -13,7 +13,7 @@ body {
   column-gap: 1.5rem;
   height: 100vh;
   width: 100vw;
-  
+
   background-color: #012e40;
 }
 .sideBar {
@@ -23,7 +23,7 @@ body {
   color: white;
   position: relative;
 }
-.hidden{
+.hidden {
   display: none;
 }
 #map {
@@ -95,40 +95,42 @@ body {
   text-align: center;
 }
 
-.logout_login{
+.logout_login {
   position: fixed;
   top: 2rem;
   left: 2rem;
-  color:white;
-  
+  color: white;
+}
+.welcome__banner {
+  position: fixed;
+  top: 2rem;
+  left: 4rem;
+  color: white;
 }
 
-a{
+a {
   text-decoration: none;
   color: white;
-  transition:0.4s;
+  transition: 0.4s;
 }
-a:hover{
+a:hover {
   cursor: pointer;
   color: #3ca6a6;
 }
 
-
-
-.icon_calendar
-{
+.icon_calendar {
   position: fixed;
   top: 2rem;
-  left: 8rem;
+  left: 10rem;
   color: white;
   transition: 00.4s;
 }
-.icon_calendar:hover{
+.icon_calendar:hover {
   cursor: pointer;
   color: #3ca6a6;
 }
 
-.overlay{
+.overlay {
   position: absolute;
   top: 0;
   bottom: 0;
@@ -140,10 +142,10 @@ a:hover{
   transition: 0.2s;
 }
 
-.popupcontent{
+.popupcontent {
   color: white;
   text-align: center;
-  position:relative;
+  position: relative;
 }
 .calendar {
   width: 98%;
@@ -151,7 +153,8 @@ a:hover{
   font-size: 13px;
 }
 
-.calendar tr, .calendar td {
+.calendar tr,
+.calendar td {
   border: 1px solid black;
 }
 
@@ -175,7 +178,6 @@ a:hover{
   font-size: 16px;
 }
 
-
 .month {
   font-size: 25px;
 }
@@ -184,12 +186,12 @@ a:hover{
   font-size: 16px;
 }
 
-.close{
-left: 15px;
-top: 5px;
-position: absolute;
-font-size: 30px;
-font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+.close {
+  left: 15px;
+  top: 5px;
+  position: absolute;
+  font-size: 30px;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 .popup {
   position: absolute;
@@ -203,10 +205,9 @@ font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   z-index: 200;
   border-radius: 25px;
   transition: 0.4s;
-
 }
 
-.hidden{
+.hidden {
   display: none;
   transition: 0.3s;
 }
@@ -227,7 +228,7 @@ font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   padding: 5px 0;
   border-radius: 6px;
   transition: 00.2s;
- 
+
   /* Position the tooltip text - see examples below! */
   position: absolute;
   z-index: 1;

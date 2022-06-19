@@ -1,21 +1,21 @@
 // Initialize and add the map
 // Initialize and add the map
-const inputContainer=document.querySelector(".event__options");
-const colisionType=document.querySelector(".form__input--type");
-const submitColision=document.querySelector("#submit_colision");
-const formDescription=document.querySelector(".form__input--description");
+const inputContainer = document.querySelector('.event__options');
+const colisionType = document.querySelector('.form__input--type');
+const submitColision = document.querySelector('#submit_colision');
+const wayOptions = document.querySelector('.way__options');
+const formDescription = document.querySelector('.form__input--description');
 let lat, lng, myEvent;
-const from = document.querySelector(".input1");
-const to = document.querySelector(".input2");
+const from = document.querySelector('.input1');
+const to = document.querySelector('.input2');
 let clicked = 0;
-zmienna = document.querySelector("#planbutton");//przycisk
+zmienna = document.querySelector('#planbutton'); //przycisk
 let latS, lngS; //punkt początkowy
 let latE, lngF; //punkt końcowy
-const opisinput = document.querySelector(".waydescription")
-const calendar = document.querySelector(".calendar")
+const opisinput = document.querySelector('.waydescription');
+const calendar = document.querySelector('.calendar');
 
 function initMap() {
-
   // The location of Uluru
 
   const uluru = { lat: 50.005, lng: 21.918 };
@@ -37,97 +37,94 @@ function initMap() {
       err => alert(`Error (${err.code}): ${err.message}`)
     );
   } else {
-    alert('Geolocation is not supported by your browser.')
+    alert('Geolocation is not supported by your browser.');
   }
-//random markery
+  //random markery
   markerA = new google.maps.Marker({
     position: google.maps.LatLng(51.7519, -1.2578),
-    title: "point A",
-    label: "A",
-    map: map
-    });
+    title: 'point A',
+    label: 'A',
+    map: map,
+  });
   markerB = new google.maps.Marker({
     position: google.maps.LatLng(51.7519, -1.2578),
-    title: "point B",
-    label: "B",
-    map: map
-    });
+    title: 'point B',
+    label: 'B',
+    map: map,
+  });
 
-  google.maps.event.addListener(map, 'click', function(event) {
-
-    if (clicked === 0){
-      markerA.setMap(null); 
+  google.maps.event.addListener(map, 'click', function (event) {
+    if (clicked === 0) {
+      markerA.setMap(null);
       markerB.setMap(null);
 
-    latS =event.latLng.toJSON().lat;
-    lngS =event.latLng.toJSON().lng;
-    
-    from.value=`${latS.toFixed(8)} ${lngS.toFixed(8)}`;
-    clicked++;
+      latS = event.latLng.toJSON().lat;
+      lngS = event.latLng.toJSON().lng;
 
-    markerA = new google.maps.Marker({
-    position: event.latLng,
-    title: "point A",
-    label: "A",
-    map: map
-    });
-    }
-    
-    else{
-    latF =event.latLng.toJSON().lat;
-    lngF =event.latLng.toJSON().lng;
+      from.value = `${latS.toFixed(8)} ${lngS.toFixed(8)}`;
+      clicked++;
 
-    to.value=`${latF.toFixed(8)} ${lngF.toFixed(8)}`;
-    clicked=0;
+      markerA = new google.maps.Marker({
+        position: event.latLng,
+        title: 'point A',
+        label: 'A',
+        map: map,
+      });
+    } else {
+      latF = event.latLng.toJSON().lat;
+      lngF = event.latLng.toJSON().lng;
 
-    markerB = new google.maps.Marker({
-      position: event.latLng,
-      title: "point B",
-      label: "B",
-      map: map
+      to.value = `${latF.toFixed(8)} ${lngF.toFixed(8)}`;
+      clicked = 0;
+
+      markerB = new google.maps.Marker({
+        position: event.latLng,
+        title: 'point B',
+        label: 'B',
+        map: map,
       });
     }
-    })
+  });
 
+  //przycisk
+  zmienna.addEventListener('click', function () {
+    let opis = opisinput.value;
+    const plandate = calendar.value;
+    if (opis === 'opis') {
+      opis = '';
+    }
+    wayOptions.classList.add('hidden');
+    inputContainer.classList.add('hidden');
+    console.log(latS, lngS, latF, lngF, opis, plandate);
+  });
+  google.maps.event.addListener(map, 'click', function (event) {
+    //placeMarker(event.latLng);
 
-    //przycisk
-    zmienna.addEventListener("click", function(){
-      let opis = opisinput.value;
-      const plandate = calendar.value;
-      if(opis==='opis'){
-       opis = ''; 
-      }
-      console.log(latS,lngS,latF,lngF,opis,plandate);
-    });
-    google.maps.event.addListener(map, 'click', function(event) {
-      //placeMarker(event.latLng);
-      
-      lat=event.latLng.toJSON().lat;
-      lng=event.latLng.toJSON().lng;
-      myEvent=event;
-      inputContainer.classList.remove("hidden");
-   });
-   submitColision.addEventListener("click",function(){
-    console.log(lat,lng,colisionType.value,formDescription.value);
+    lat = event.latLng.toJSON().lat;
+    lng = event.latLng.toJSON().lng;
+    myEvent = event;
+    inputContainer.classList.remove('hidden');
+    wayOptions.classList.remove('hidden');
+  });
+  submitColision.addEventListener('click', function () {
+    console.log(lat, lng, colisionType.value, formDescription.value);
     placeMarker(myEvent.latLng, colisionType.value, formDescription.value);
-    inputContainer.classList.add("hidden");
-  })
-  
-   function placeMarker(location, typexDD,dsc) {
-    if(dsc=="opis"){
-      dsc="";
+    inputContainer.classList.add('hidden');
+    wayOptions.classList.add('hidden');
+  });
+
+  function placeMarker(location, typexDD, dsc) {
+    if (dsc == 'opis') {
+      dsc = '';
     }
     var marker = new google.maps.Marker({
-        position: location, 
-        map: map,
-        title:`${typexDD} ${dsc}`,
+      position: location,
+      map: map,
+      title: `${typexDD} ${dsc}`,
     });
     marker.setPosition(location);
-    
-    
   }
-    
- };
+}
 
 ///////////////////////////////////////////////
 
