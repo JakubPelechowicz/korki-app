@@ -9,7 +9,7 @@
     <h2 class="app__name">Traffic Jams App</h2>
   </div>
   <!-- Add event -->
-  <div class="event__options">
+  <div class="event__options hidden">
     <form class="form">
       <div class="form__row">
         <label class="form__label">Zdarzenie</label>
@@ -35,7 +35,7 @@
   <!-- Add event end -->
 
 <!-- ///////////////////////////////// -->
-<div class="event__options">
+<div class="event__options way__options hidden">
   <form class="form">
     <input class="input1" type="text" id="coords" name="from"><br><br>
 <input class="input2" type="text" id="coorrds" name="to"><br><br>
@@ -60,8 +60,9 @@
 
 <div class="map" id="map"></div>
 {% if user.is_authenticated %}
-<span class="logout_login"><a href="{% url 'logout' %}"><i class="fa-solid fa-arrow-right-from-bracket"></i> Log Out</a> </span>
+<span class="logout_login"><a href="{% url 'logout' %}"><i class="fa-solid fa-arrow-right-from-bracket"></i></a> </span>
 <i class="fa-solid fa-calendar-days icon_calendar"></i>
+<p class="welcome__banner">Hello, {{ user.username }}</p>
 {% else %}
 <span class="logout_login"><a href="{% url 'login' %}"><i class="fa-solid fa-arrow-right-from-bracket"></i> Login</a></span>
 {% endif %}
