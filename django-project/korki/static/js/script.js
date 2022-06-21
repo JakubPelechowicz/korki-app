@@ -11,7 +11,7 @@ const to = document.querySelector('.input2');
 let clicked = 0;
 zmienna = document.querySelector('#planbutton'); //przycisk
 let latS, lngS; //punkt początkowy
-let latE, lngF; //punkt końcowy
+let latF, lngF; //punkt końcowy
 const opisinput = document.querySelector('.waydescription');
 const calendar = document.querySelector('.calendar');
 
@@ -39,18 +39,24 @@ function initMap() {
   } else {
     alert('Geolocation is not supported by your browser.');
   }
-  //random markery
+  //trasa
+  const geocoder = new google.maps.Geocoder();
+  var directionsService = new google.maps.DirectionsService,
+  directionsDisplay = new google.maps.DirectionsRenderer({
+      map: map
+  })
+  //markery
   markerA = new google.maps.Marker({
     position: google.maps.LatLng(51.7519, -1.2578),
     title: 'point A',
     label: 'A',
-    map: map,
+    map: null,
   });
   markerB = new google.maps.Marker({
     position: google.maps.LatLng(51.7519, -1.2578),
     title: 'point B',
     label: 'B',
-    map: map,
+    map: null,
   });
 
   google.maps.event.addListener(map, 'click', function (event) {
@@ -61,7 +67,6 @@ function initMap() {
       latS = event.latLng.toJSON().lat;
       lngS = event.latLng.toJSON().lng;
 
-      from.value = `${latS.toFixed(8)} ${lngS.toFixed(8)}`;
       clicked++;
 
       markerA = new google.maps.Marker({
@@ -70,11 +75,11 @@ function initMap() {
         label: 'A',
         map: map,
       });
+      geocodeLatLng(geocoder,event.latLng,from);
     } else {
       latF = event.latLng.toJSON().lat;
       lngF = event.latLng.toJSON().lng;
 
-      to.value = `${latF.toFixed(8)} ${lngF.toFixed(8)}`;
       clicked = 0;
 
       markerB = new google.maps.Marker({
@@ -83,6 +88,9 @@ function initMap() {
         label: 'B',
         map: map,
       });
+
+      geocodeLatLng(geocoder,event.latLng,to);
+      calculateAndDisplayRoute(directionsService, directionsDisplay, markerA.getPosition(), markerB.getPosition());
     }
   });
 
@@ -132,3 +140,35 @@ function initMap() {
 
 ///<script  src="{% static 'js/script.js'" %}"></script>
 window.initMap = initMap;
+
+function calculateAndDisplayRoute(directionsService, directionsDisplay, pointA, pointB) {
+  directionsService.route({
+      origin: pointA,
+      destination: pointB,
+      avoidTolls: true,
+      avoidHighways: false,
+      travelMode: google.maps.TravelMode.DRIVING
+  }, function (response, status) {
+      if (status == google.maps.DirectionsStatus.OK) {
+          directionsDisplay.setDirections(response);
+      } else {
+          window.alert('Directions request failed due to ' + status);
+      }
+  });
+}
+
+function geocodeLatLng(geocoder, latlng, field) {
+  
+  geocoder
+    .geocode({ location: latlng })
+    .then((response) => {
+      if (response.results[0]) {
+        
+        console.log(response.results[0].formatted_address);
+        field.value = `${response.results[0].formatted_address}`;
+      } else {
+        window.alert("No results found");
+      }
+    })
+    .catch((e) => window.alert("Geocoder failed due to: " + e));
+}
